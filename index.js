@@ -1,14 +1,14 @@
 import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
-import config from "./config.js"
+import 'dotenv/config';
 
 // Creating an express app and setting the port to 3000
 const app = express();
 const port = 3000;
 
 // Setting my API Key to make requests
-const myAPIKey = config.apiKey;
+const myAPIKey = process.env.API_KEY;
 
 // Variables to store films and errors if they occur
 let films = [];
