@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", serif;
+}
+
+body {
+    background-color: black;
+}
+
+header {
+    max-width: 1200px;
+    width: 100%;
+}
+
+h1 {
+    color: #624E88;
+    padding: 32px 0;
+    font-size: 48px;
+    text-align: center;
+}
+
+h2 {
+    color: #624E88;
+    padding-bottom: 16px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    padding: 32px 0;
+}
+
+input {
+    background-color: transparent;
+    border: 2px solid #3B1E54;
+    color: #B7B7B7;
+    border-radius: 8px;
+    height: 56px;
+    font-size: 24px;
+    text-align: center;
+}
+
+#filmText {
+    max-width: 800px;
+    width: 100%;
+    margin-right: 16px;
+}
+
+#filmButton {
+    max-width: 200px;
+    width: 100%;
+    cursor: pointer;
+    transition: .7s;
+}
+
+#filmButton:hover {
+    background-color: #3B1E54;
+    border-color: #B7B7B7;
+    transition: .7s;
+}
+
+main {
+    margin: 32px 0 80px 0;
+}
+
+.film-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.film {
+    display: flex;
+    flex-direction: column;
+}
+
+.film img {
+    max-width: 100%;
+    width: 270px;
+    max-height: 400px;
+    height: 100%;
+    object-fit: fill;
+    border: 1px dotted #B7B7B7;
+    margin-bottom: 8px;
+}
+
+.film p {
+    color: #624E88;
+    display: block;
+}
+
+.film p span {
+    color: #3B1E54;
+    font-weight: bold;
+}
+
+footer {
+    padding: 16px 0;
+    color: #3B1E54;
+    background-color: black;
+    text-align: center;
+    font-size: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.error-message {
+    color: #624E88;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (min-width: 1025px) and (max-width: 1300px) {
+    .container {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 1024px) {
+    form {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    input {
+        font-size: 16px;
+    }
+
+    #filmText {
+        margin-right: 0px;
+        margin-bottom: 16px;
+    }
+
+    .film-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin: 0 auto;
+    }
+
+    .film {
+        max-width: 270px;
+        margin: 0 auto;
+    }
+
+
+
+    footer {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    input {
+        font-size: 12px;
+    }
+
+    .film-list {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        font-size: 16px;
+    }
+}

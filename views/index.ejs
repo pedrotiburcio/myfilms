@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>My Films</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Films</h1>
+            <h2>A good way to find a film you're looking for.</h2>
+            <!-- Creating a form to submit a post request to the /submit endpoint, passing a film/series the user is searching for -->
+            <form action="/submit" method="post">
+                <input id="filmText" type="text" name="film" placeholder="Type the film or series you want to search">
+                <input id="filmButton" type="submit" placeholder="Send">        
+            </form>
+        </header>
+        <main>
+            <!-- If the films variable exists -->
+            <% if (locals.films) { %>
+                <% if (films.length > 0) { %>
+                    <!-- Creating a film list based on a user's search -->
+                    <ul class="film-list">
+                        <% films.forEach(film => { %>
+                            <li class="film">
+                                <img src=<%= film.Poster !== 'N/A' ? film.Poster : '/images/default_poster.jpg'%> alt=<%= film.Title %>> 
+                                <p><span>Title:</span> <%= film.Title %></p>
+                                <p><span>Type:</span> <%= film.Type.replace(film.Type[0], film.Type[0].toUpperCase()) %></p>
+                                <p><span>Year:</span> <%= film.Year %></p>
+                            </li>    
+                        <% }) %>
+                    </ul>   
+                <% } else { %>
+                    <!-- Dealing with possible errors -->
+                    <% if (locals.error) { %> 
+                        <h2 class="error-message"><%= error %></h2>
+                    <% } %>
+                <% } %>
+            <% } %>
+        </main>
+        <!-- Setting an actual year -->
+        <footer>&copy <%= new Date().getFullYear() %> - Pedro Tibúrcio - All Rights Reserved.</footer>
+    </div>
+</body>
+</html>
