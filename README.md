@@ -13,7 +13,7 @@ MyFilms is an app with responsive design that make a request to OMDb API based o
 
 ### Instructions:
 
-To run the app localy, follow these steps:
+To run the app locally, follow these steps:
 
 1 - To make the requests to the OMDb API, firstly it's necessary register on the OMDb website  (https://www.omdbapi.com/) and write down the API Key. **Your API key is confidential. Do not share!**
 
